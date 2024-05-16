@@ -5,6 +5,7 @@ import { AuthenticationRoutingModule } from './authentication-routing.module';
 import { LoginComponent } from './login/login.component';
 import { CommonComponentsModule } from 'src/app/common-components/common-components.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { NgOtpInputModule } from 'ng-otp-input';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
     CommonModule,
     AuthenticationRoutingModule,
     CommonComponentsModule,
+    NgOtpInputModule,
   ]
 })
 export class AuthenticationModule { }

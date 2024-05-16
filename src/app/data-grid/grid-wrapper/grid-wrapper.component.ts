@@ -39,7 +39,7 @@ export class GridWrapperComponent {
   @Input() module: any;
   modules: Module[] = [ClientSideRowModelModule];
   @Input() overlayNoRowsTemplate: any;
-  gridApi: GridApi;
+  gridApi!: GridApi;
   rowModelType: any;
   rowData: any[] = [];
 

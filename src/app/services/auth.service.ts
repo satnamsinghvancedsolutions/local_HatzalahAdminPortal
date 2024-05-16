@@ -63,4 +63,19 @@ export class AuthService {
   }
 
 
+  public checkUsernameAndPhone(payload: any) {
+    return this.http.post(`${this.apiUrl}/CheckOTPByUsernameAndPhone`,payload, this.options)
+  }
+
+  public checkOTP(payload: any) {
+    return this.http.post(`${this.apiUrl}/CheckOTP`,payload, this.options)
+  }
+
+  public updatePassword(payload: any) {
+    return this.http.post(`${this.apiUrl}/UpdatePassword`,payload, this.options)
+  }
+
+  public hostedEnvironment(){
+    return this.http.get(`${this.apiUrl}/HostedEnvironment`, this.options)
+  }
 }

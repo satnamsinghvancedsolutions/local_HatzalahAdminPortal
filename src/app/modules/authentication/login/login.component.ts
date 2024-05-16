@@ -4,6 +4,8 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Subject, takeUntil } from 'rxjs';
 import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
+import { AuthService } from 'src/app/services/auth.service';
+import { StorageKeyEnum } from 'src/app/core/StorageKeyEnum';
 
 @Component({
   selector: 'app-login',
@@ -22,7 +24,7 @@ export class LoginComponent implements OnInit, OnDestroy{
   }
 
   constructor(
-    // private authService: AuthService,
+    private authService: AuthService,
     private fb: FormBuilder,
     private router: Router,
     private dialog:MatDialog,
@@ -53,28 +55,27 @@ export class LoginComponent implements OnInit, OnDestroy{
   public login() {
     if(this.loginForm.valid){
       this.showLoader = true;
-      // this.authService
-      //   .login(
-      //     this.loginForm.get("username")?.value,
-      //     this.loginForm.get("password")?.value
-      //   )
-      //   .pipe(takeUntil(this.destroy$))
-      //   .subscribe({
-      //     next:(value: any) => {
-      //       if(value.data != null){
-      //         // localStorage.setItem(StorageKeyEnum.User, JSON.stringify(value.data.userInfoDto));
-      //         // localStorage.setItem(StorageKeyEnum.TokenInfo, JSON.stringify(value.data.tokens));
-      //         // localStorage.setItem(StorageKeyEnum.Permissions, JSON.stringify(value.data.permissions));
-      //         // this.router.navigate(["/dashboard"]);
-      //       }else{
-      //         this.showLoader = false;
-      //         this.errorMessage = value.errors[0];
-      //       }
-      //     },error:(err: any) => {
-      //       this.showLoader = false;
-      //       this.errorMessage = err.error.message;
-      //     }
-      //   });
+      this.authService
+        .login(
+          this.loginForm.get("username")?.value,
+          this.loginForm.get("password")?.value
+        )
+        .pipe(takeUntil(this.destroy$))
+        .subscribe({
+          next:(value: any) => {
+            if(value.data != null){
+              localStorage.setItem(StorageKeyEnum.User, JSON.stringify(value.data.userInfoDto));
+              localStorage.setItem(StorageKeyEnum.TokenInfo, JSON.stringify(value.data.tokens));
+              this.router.navigate(["/important-numbers"]);
+            }else{
+              this.showLoader = false;
+              this.errorMessage = value.errors[0];
+            }
+          },error:(err: any) => {
+            this.showLoader = false;
+            this.errorMessage = err.error.message;
+          }
+        });
     }
     else{
       this.flag.submitted = true

@@ -17,6 +17,8 @@ import { AgGridModule } from '@ag-grid-community/angular';
     AgGridComponentsModule,
     AgGridModule
   ],
-  exports: [],
+  exports: [
+    GridWrapperComponent
+  ],
 })
 export class DataGridModule {}

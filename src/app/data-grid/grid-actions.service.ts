@@ -7,14 +7,16 @@ import { GridApi, GridOptions } from '@ag-grid-community/core';
 })
 export class GridActionsService {
   gridOptions!: GridOptions;
-  gridApi!: GridApi;
+  gridApi: GridApi<any> | null = null;
   rowsSelected: any;
   selectedRows: any = [];
 
   constructor(private gridApiService: GridApiService) {
     this.gridApiService.gridApi$.subscribe((e) => {
       this.gridOptions = e;
-      this.gridApi = this.gridOptions.api;
+      if (this.gridOptions.api) {
+        this.gridApi = this.gridOptions.api; // Assign only if api is defined
+      }
     });
     this.gridApiService.selectedRows$.subscribe((selectedRows) => {
       this.selectedRows = selectedRows;
@@ -26,6 +28,6 @@ export class GridActionsService {
   }
 
   deselectAllRow() {
-    this.gridApi.deselectAll();
+    this.gridApi?.deselectAll();
   }
 }
