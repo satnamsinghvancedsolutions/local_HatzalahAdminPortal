@@ -1,0 +1,17 @@
+<div class="grid-wrapper_header mb-2 d-flex align-items-center">
+  <div class="grid-wrapper_header-search d-flex align-items-center gap-1">
+    <span>
+      <svg width="14.7" height="14.53">
+        <use xlink:href="assets/images/sprite-icons.svg#search-icon"></use>
+      </svg>
+    </span>
+    <input
+      type="text"
+      class="form-control form-control-sm border-0 search-input"
+      placeholder="Search"
+      [(ngModel)]="searchText"
+      (input)="search(searchText)"
+    />
+  </div>
+
+</div>
