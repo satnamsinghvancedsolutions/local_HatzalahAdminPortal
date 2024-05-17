@@ -6,6 +6,9 @@ import { DatePipe } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LicenseManager } from 'ag-grid-enterprise';
+import {  AgGridModule } from '@ag-grid-community/angular';
+import { CommonComponentsModule } from './common-components/common-components.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AgGridModule,
+    CommonComponentsModule
   ],
   providers: [
     DatePipe

@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { GridApi, Module, ModuleRegistry } from '@ag-grid-community/core';
-import { ExcelExportModule } from '@ag-grid-enterprise/excel-export';
 import { MenuModule } from '@ag-grid-enterprise/menu';
 import { SetFilterModule } from '@ag-grid-enterprise/set-filter';
 import { FiltersToolPanelModule } from '@ag-grid-enterprise/filter-tool-panel';
@@ -26,7 +25,7 @@ ModuleRegistry.registerModules([
   RichSelectModule,
   RowGroupingModule,
   MultiFilterModule,
-  ExcelExportModule,
+ // ExcelExportModule,
 ]);
 @Component({
   selector: 'app-grid-wrapper',
