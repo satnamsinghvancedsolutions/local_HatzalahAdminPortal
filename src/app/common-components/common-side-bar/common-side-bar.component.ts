@@ -8,15 +8,8 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class CommonSideBarComponent implements OnInit{
   menuRoutes: any = [
-     { name: 'Dashboard',icon: 'assets/images/sprite-icons.svg#dashboard-icon', route: '/dashboard', permission:''},
-     { name: 'Call History',class: 'fas fa-blender-phone', route: '/call-history',permission:'Permissions.MenuCallHistory.View'},
-     { name: 'Members',class: 'fas fa-hands-helping', route: '/members',permission:'Permissions.MenuMembers.View'},
-     { name: 'Shift Schedule',class: 'fas fa-calendar', route: '/shift-schedule',permission:'Permissions.MenuShiftSchedules.View'},
-     { name: 'Contact',class: 'fas fa-phone', route: '/contact',permission:'Permissions.MenuContacts.View'},
-     { name: 'RBAC',class: 'fas fa-user-plus', route: '/rbac',permission:'Permissions.MenuRBAC.View'},
-     { name: 'Admin Panel',class: 'fas fa-user-cog', route: '/admin-panel',permission:'Permissions.MenuAdminPanel.View'},
-     { name: 'Reports',class: 'fa-solid fa-chart-column', route: '/report',permission:'Permissions.MenuReports.View'},
-     { name: 'Admin Report',class:'fas fa-sign-in-alt', route: '/admin-report',permission:'Permissions.MenuUserLogins.View'},
+     { name: 'Important Numbers',icon: 'assets/images/sprite-icons.svg#dashboard-icon', route: '/important-numbers'},
+     { name: 'Hospital',class: 'fas fa-blender-phone', route: '/hospital'}
   ]
 
  constructor(private authService:AuthService){

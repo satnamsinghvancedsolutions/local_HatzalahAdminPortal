@@ -1,6 +1,6 @@
 <div class="header-content d-flex justify-content-between">
   <div class="logo-menu d-flex align-items-center gap-4">
-      <div class="menu-sidebar text-primary-dark example-sidenav-content">
+      <div class="menu-sidebar text-primary-dark example-sidenav-content" (click)="openMenuSidebar()">
           <svg width="24" height="24" class="pointer">
               <use xlink:href="assets/images/sprite-icons.svg#menu-icon"></use>
           </svg>
@@ -17,3 +17,9 @@
       </div>
   </div>
 </div>
+
+<mat-sidenav-container class="sidebar" [ngClass]="{'hide': menuSidePanelData}" (backdropClick)="close()">
+  <mat-sidenav #menuSideNav mode="over" position="start" class="sidepanel_nav" (keydown.escape)="close()">
+      <app-common-side-bar *ngIf="menuSidePanelData"></app-common-side-bar>
+  </mat-sidenav>
+</mat-sidenav-container>

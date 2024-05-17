@@ -85,3 +85,16 @@
       }
   }
 }
+.sidebar {
+  position: inherit;
+  &_nav {
+      width: 25%;
+  }
+}
+
+.sidepanel {
+  position: inherit;
+  &_nav {
+      min-width: 275px;
+  }
+}
