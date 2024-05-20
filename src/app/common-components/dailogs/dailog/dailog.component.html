@@ -1,0 +1,14 @@
+<app-dailog-header
+  (close)="close.emit('')"
+  [description]="description"
+  [hideCloser]="hideCloser"
+  class="text-center"
+  >{{ title }}</app-dailog-header>
+<mat-dialog-content>
+  <ng-content></ng-content>
+</mat-dialog-content>
+<app-dailog-footer
+  *ngIf="actions && actions.length"
+  [actions]="actions"
+  (action)="emitAction($event)"
+></app-dailog-footer>

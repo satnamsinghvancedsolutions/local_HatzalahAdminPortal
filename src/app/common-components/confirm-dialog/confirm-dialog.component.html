@@ -1,0 +1,9 @@
+<app-dailog
+  [title]="data.title"
+  [actions]="actions"
+  [hideCloser]="data.disableClose"
+  (action)="close($event)"
+   
+>
+  <div class="confirm" [innerHTML]="data.message"></div>
+</app-dailog>

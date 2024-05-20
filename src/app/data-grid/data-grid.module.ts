@@ -15,10 +15,10 @@ import { AgGridModule } from '@ag-grid-community/angular';
     CommonModule,
     CommonComponentsModule,
     AgGridComponentsModule,
-    AgGridModule
+    AgGridModule,
   ],
   exports: [
-    GridWrapperComponent
+    GridWrapperComponent, 
   ],
 })
 export class DataGridModule {}

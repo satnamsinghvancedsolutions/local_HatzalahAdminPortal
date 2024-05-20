@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { GridApi, Module, ModuleRegistry } from '@ag-grid-community/core';
 import { MenuModule } from '@ag-grid-enterprise/menu';
 import { SetFilterModule } from '@ag-grid-enterprise/set-filter';
@@ -36,9 +36,10 @@ export class GridWrapperComponent {
   @Input() gridOptions: any;
   @Input() columnDefs: any;
   @Input() module: any;
+  @Output() addNew = new EventEmitter<any>();
   modules: Module[] = [ClientSideRowModelModule];
   @Input() overlayNoRowsTemplate: any;
-  gridApi!: GridApi;
+  gridApi: GridApi<any> | null = null;
   rowModelType: any;
   rowData: any[] = [];
 
@@ -54,5 +55,8 @@ export class GridWrapperComponent {
 
   onGridReady(event: any) {
     // this.gridReady.emit(event)
+  }
+  addNews(){
+    this.addNew.emit();
   }
 }

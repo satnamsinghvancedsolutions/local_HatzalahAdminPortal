@@ -15,6 +15,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [],
@@ -33,7 +34,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatExpansionModule,
     MatIconModule,
     MatCheckboxModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatSnackBarModule
   ],
   exports: [
     MatSelectModule,
@@ -51,7 +53,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatCheckboxModule,
     MatSidenavModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   providers:[
     {provide: MAT_DIALOG_DATA, useValue: {}},

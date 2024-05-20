@@ -10,7 +10,6 @@ export class GridActionsService {
   gridApi: GridApi<any> | null = null;
   rowsSelected: any;
   selectedRows: any = [];
-
   constructor(private gridApiService: GridApiService) {
     this.gridApiService.gridApi$.subscribe((e) => {
       this.gridOptions = e;
@@ -30,4 +29,5 @@ export class GridActionsService {
   deselectAllRow() {
     this.gridApi?.deselectAll();
   }
+
 }

@@ -1,0 +1,23 @@
+<app-dailog [title]="title" [actions]="[{ text: 'Close', buttonSize: 'large', buttonStyle: 'dark'},
+{ text:'Create', buttonSize: 'extra-large'}]" (close)="close()" (action)="action($event)">
+  <form [formGroup]="importantNumberForm">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-sm-6">
+
+          <label class="control-label">Name:</label>
+          <input type="text" class="form-control" placeholder="Name" formControlName="name">
+        </div>
+        <div class="col-sm-6">
+          <label class="control-label">Phone Number:</label>
+          <input type="email" class="form-control" placeholder="Phone number" formControlName="phoneNumber">
+        </div>
+
+        <div class="col-sm-6">
+          <label class="control-label mt-3">Category:</label>
+          <input type="text" class="form-control" placeholder="Category" formControlName="categoryName">
+        </div>
+      </div>
+    </div>
+  </form>
+</app-dailog>

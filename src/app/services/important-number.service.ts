@@ -9,7 +9,7 @@ import { AgGridRequestService } from './ag-grid-request.service';
 export class ImportantNumberService {
   private headers = new HttpHeaders({ "Content-Type": "application/json" });
   options = { headers: this.headers };
-  apiUrl=environment.apiUrl + '/api/ImportantNumber';
+  importantNumbersUrl=environment.apiUrl + '/api/ImportantNumber';
 
   constructor(private http: HttpClient,
     private agGridRequestService: AgGridRequestService
@@ -27,8 +27,22 @@ export class ImportantNumberService {
       ...commonRequest,
     };
     return this.http.post(
-      `${this.apiUrl}/GetAllImportantNumbers`,
+      `${this.importantNumbersUrl}/GetAllImportantNumbers`,
       payload,
+      this.options
+    );
+  }
+
+
+  public CreateUpdateImportantNumber(payload:any){
+    return this.http.post(`${this.importantNumbersUrl}/CreateUpdateImportantNumber`,
+    payload ,
+    this.options);
+  }
+
+  DeleteImportantNumber(payload:any) {
+    return this.http.post(
+     ` ${this.importantNumbersUrl}/DeleteImportantNumber?id=${payload.id}`,
       this.options
     );
   }

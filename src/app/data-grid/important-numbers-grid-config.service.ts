@@ -2,6 +2,7 @@ import { GridApi, GridOptions } from '@ag-grid-community/core';
 import { Injectable } from '@angular/core';
 import { GridApiService } from './grid-api.service';
 import { GridActionsService } from './grid-actions.service';
+import { ActionsCellRendererComponent } from '../ag-grid-components/actions-cell-renderer/actions-cell-renderer.component';
 
 @Injectable({
   providedIn: 'root',
@@ -48,7 +49,9 @@ export class ImportantNumbersGridConfigService {
     }
   ];
 
-  components = {};
+  components = {
+    actionsCellRendererComponent: ActionsCellRendererComponent,
+  };
 
   gridOptions: GridOptions = {
     rowModelType: 'serverSide',

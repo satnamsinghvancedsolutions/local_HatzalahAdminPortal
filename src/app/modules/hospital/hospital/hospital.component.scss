@@ -1,0 +1,44 @@
+/* app-grid-wrapper.component.css */
+
+/* Style for the grid wrapper */
+.grid-wrapper {
+  width: 100%;
+  height: 400px; /* Adjust height as needed */
+}
+
+/* Style for the ag-grid */
+.ag-theme-alpine {
+  width: 100%;
+  height: 100%;
+}
+
+/* Style for the grid header */
+.ag-header {
+  background-color: #f0f0f0;
+}
+
+/* Style for the grid header cell */
+.ag-header-cell {
+  border-right: 1px solid #ccc;
+  font-weight: bold;
+}
+
+/* Style for the grid rows */
+.ag-row {
+  border-bottom: 1px solid #ccc;
+}
+
+/* Style for alternating row background color */
+.ag-row-even {
+  background-color: #f9f9f9;
+}
+
+/* Style for selected row */
+.ag-row-selected {
+  background-color: #cce5ff; /* Change to your preferred color */
+}
+
+/* Style for grid cell */
+.ag-cell {
+  padding: 5px;
+}
